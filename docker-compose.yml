@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  admin:
+    build: './health-monitor-admin-ui'
+    ports:
+      - "8000:80"
+  db:
+    build: './db'
+    ports:
+      - "8001:5432"
