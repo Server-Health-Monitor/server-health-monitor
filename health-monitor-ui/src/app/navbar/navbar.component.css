@@ -1,5 +1,10 @@
+main {
+    height: calc(100vh - 48px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .sidebar {
-    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -14,8 +19,6 @@ i {
 }
 
 .sidebar-sticky {
-    position: -webkit-sticky;
-    position: sticky;
     top: 48px;
     /* Height of navbar */
     height: calc(100vh - 48px);
