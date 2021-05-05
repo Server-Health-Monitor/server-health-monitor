@@ -6,11 +6,21 @@ import { Injectable } from '@angular/core';
 export class LocalStorageDbService {
 
   private readonly favoritesKey: string = "favorites";
+  private readonly companyNameKey: string = "companyName";
 
   constructor() { }
 
+  public getCompanyName(): string {
+    return JSON.parse(localStorage.getItem("companyName"));
+
+  }
+
+  public setCompanyName(companyName: string): void {
+    this.pushToLocalStorage(this.companyNameKey,companyName);
+  }
+
   public getFavorites(): string[] {
-    return ["", ""]
+    return JSON.parse(localStorage.getItem("favorites"));
   }
 
   public addFavorite(favoriteName: string): void {

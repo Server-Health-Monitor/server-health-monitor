@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LocalStorageDbService } from '../services/local-storage-db.service'
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -7,13 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  public companyName: string = "Company Name Inc."
-  public favorites: string[] = JSON.parse(localStorage.getItem("favorites"));
+  public companyName: string = this.lsDB.getCompanyName();
+  public favorites: string[] = this.lsDB.getFavorites();
 
-  constructor() { }
+  constructor(private lsDB: LocalStorageDbService) { }
 
   ngOnInit(): void {
-    console.log(this.favorites)
   }
 
 }
