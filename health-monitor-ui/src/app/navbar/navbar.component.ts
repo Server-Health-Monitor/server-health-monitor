@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  public companyName = "Company Name Inc."
+  public companyName: string = "Company Name Inc."
+  public favorites: string[] = JSON.parse(localStorage.getItem("favorites"));
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.favorites)
   }
 
 }
