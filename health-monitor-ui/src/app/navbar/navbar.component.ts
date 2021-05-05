@@ -8,7 +8,6 @@ import { LocalStorageDbService } from '../services/local-storage-db.service'
 export class NavbarComponent implements OnInit {
 
   public companyName: string = this.lsDB.getCompanyName();
-  public favorites: string[] = this.lsDB.getFavorites();
 
   constructor(private lsDB: LocalStorageDbService) { }
 
