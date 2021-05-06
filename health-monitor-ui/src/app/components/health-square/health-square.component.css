@@ -1,0 +1,26 @@
+.health-square {
+    width: 2rem;
+    height: 2rem;
+    background-color: teal;
+}
+
+.tooltip-wrap {
+    position: relative;
+    background-color: teal;
+    width: 2rem;
+    height: 2rem;
+}
+
+.tooltip-wrap .tooltip-content {
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    background-color: #fff;
+    padding: .5em;
+}
+
+.tooltip-wrap:hover .tooltip-content {
+    display: block;
+}
