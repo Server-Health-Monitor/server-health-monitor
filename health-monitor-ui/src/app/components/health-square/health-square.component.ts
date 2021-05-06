@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-health-square',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./health-square.component.css']
 })
 export class HealthSquareComponent implements OnInit {
+
+  @Input() message: string;
+  @Input() isHealthy: boolean;
 
   constructor() { }
 
