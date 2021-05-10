@@ -19,6 +19,8 @@ public class HealthMonitorApplication {
         SpringApplication.run(HealthMonitorApplication.class, args);
     }
 
+
+    // testing
     @PostConstruct
     public void init() {
         List<Application> app = appService.listAll();
