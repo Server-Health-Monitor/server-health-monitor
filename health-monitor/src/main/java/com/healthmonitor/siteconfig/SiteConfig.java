@@ -13,7 +13,10 @@ public class SiteConfig {
 
     private String property;
 
-    private String value;
+    private String propertyValue;
+
+    public SiteConfig() {
+    }
 
     public Integer getID() {
         return id;
@@ -23,7 +26,7 @@ public class SiteConfig {
         return property;
     }
 
-    public String getValue() {
-        return value;
+    public String getPropertyValue() {
+        return propertyValue;
     }
 }
