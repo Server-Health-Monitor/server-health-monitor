@@ -66,7 +66,9 @@ ALTER TABLE health_monitor.servers ADD CONSTRAINT pk_servers
 CREATE TABLE health_monitor.site_config
 (
   id integer NOT NULL,
-  custom_name varchar(250)
+  property varchar(250)
+  property_value varchar(250)
+
 );
 
 ALTER TABLE health_monitor.site_config ADD CONSTRAINT pk_site_config
