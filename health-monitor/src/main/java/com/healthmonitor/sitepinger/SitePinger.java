@@ -1,6 +1,9 @@
 package com.healthmonitor.sitepinger;
 
-import java.io.IOException;
+import com.healthmonitor.servers.Server;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -15,20 +18,18 @@ public class SitePinger {
     public SitePinger() {
     }
 
-    public void pingSites(List<Object> sites) {
-        sites.parallelStream().forEach(this::pingSite);
-    }
-
-    private CompletableFuture<Void> pingSite(Object site) {
-        var request = HttpRequest.newBuilder(URI.create("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"))
-                .header("accept", "application/json").build();
-        try {
-            var response = client.send(request, HttpResponse.BodyHandlers.discarding());
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-        // set status on site
-        return null;
+    public void pingSites(List<Server> servers) {
+        servers.parallelStream().forEach(server -> {
+            var request = HttpRequest
+                    .newBuilder(URI.create(server.getUri()))
+                    .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
+                    .build();
+            CompletableFuture<HttpResponse<Void>> resp = client.
+                    sendAsync(request, HttpResponse.BodyHandlers.discarding());
+            resp.thenAccept(respFuture -> {
+                server.setDisplayName(respFuture.toString()); // need to implement set status code
+            });
+        });
     }
 
 }
