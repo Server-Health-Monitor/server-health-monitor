@@ -77,7 +77,7 @@ ALTER TABLE health_monitor.site_config ADD CONSTRAINT pk_site_config
 CREATE TABLE health_monitor.statuses
 (
   status_id integer NOT NULL,
-  status bigint NOT NULL
+  status_name varchar(50) NOT NULL
 );
 
 ALTER TABLE health_monitor.statuses ADD CONSTRAINT pk_statuses
