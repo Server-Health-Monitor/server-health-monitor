@@ -12,7 +12,6 @@ export class SiteConfigService {
 
   private serverAPI = "http://localhost:8080/"
 
-
   public getConfigs(): Observable<SiteConfig[]> {
     let endPoint = this.serverAPI + "siteconfig"
     return this.http.get<Array<SiteConfig>>(endPoint);
