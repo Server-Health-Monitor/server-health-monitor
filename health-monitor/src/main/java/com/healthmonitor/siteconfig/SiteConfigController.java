@@ -1,12 +1,11 @@
 package com.healthmonitor.siteconfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("siteconfig")
 public class SiteConfigController {
@@ -18,4 +17,10 @@ public class SiteConfigController {
     public List<SiteConfig> getAllConfigs() {
         return siteConfigService.listAll();
     }
+
+    @GetMapping("/{property_name}")
+    public SiteConfig getConfig(@PathVariable(value="property_name") String property){
+        return siteConfigService.findByPropertyName(property);
+    }
+
 }

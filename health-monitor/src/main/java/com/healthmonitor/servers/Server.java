@@ -4,6 +4,7 @@ package com.healthmonitor.servers;
 import com.healthmonitor.applications.Application;
 import com.healthmonitor.groups.Group;
 import com.healthmonitor.proxy.Proxy;
+import com.healthmonitor.statuses.Status;
 
 import javax.persistence.*;
 
@@ -37,9 +38,9 @@ public class Server {
     @JoinColumn(name = "proxy_id")
     private Proxy proxy;
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "status_id")
-//    private long status;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "status_id")
+    private Status status;
 
     public Integer getServerId() {
         return serverId;
@@ -96,12 +97,12 @@ public class Server {
     public void setProxy(Proxy proxy) {
         this.proxy = proxy;
     }
-//
-//    public long getStatus() {
-//        return status;
-//    }
-//
-//    public void setStatus(long status) {
-//        this.status = status;
-//    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }

@@ -27,7 +27,7 @@ public class SitePinger {
             CompletableFuture<HttpResponse<Void>> resp = client.
                     sendAsync(request, HttpResponse.BodyHandlers.discarding());
             resp.thenAccept(respFuture -> {
-                server.setDisplayName(respFuture.toString()); // need to implement set status code
+                System.out.println("hey");
             });
         });
     }
