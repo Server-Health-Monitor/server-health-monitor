@@ -7,11 +7,12 @@ import { LocalStorageDbService } from '../services/local-storage-db.service'
 })
 export class NavbarComponent implements OnInit {
 
-  public companyName: string = this.lsDB.getCompanyName();
+  public companyName: string = this.lsDB.getSiteName();
 
   constructor(private lsDB: LocalStorageDbService) { }
 
   ngOnInit(): void {
+    console.log(this.lsDB.getSiteName())
   }
 
 }

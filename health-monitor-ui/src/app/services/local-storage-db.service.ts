@@ -6,12 +6,12 @@ import { Injectable } from '@angular/core';
 export class LocalStorageDbService {
 
   private readonly favoritesKey: string = "favorites";
-  private readonly companyNameKey: string = "companyName";
+  private readonly companyNameKey: string = "site_name";
 
   constructor() { }
 
-  public getCompanyName(): string {
-    return JSON.parse(localStorage.getItem("companyName"));
+  public getSiteName(): string {
+    return JSON.parse(localStorage.getItem(this.companyNameKey));
 
   }
 
@@ -32,7 +32,7 @@ export class LocalStorageDbService {
     this.pushToLocalStorage(this.favoritesKey, existingFaves)
   }
 
-  private pushToLocalStorage(key: string, value: Object) {
+  public pushToLocalStorage(key: string, value: Object) {
     localStorage.setItem(key, JSON.stringify(value));
   }
 }
