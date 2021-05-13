@@ -15,6 +15,9 @@ public class SiteConfigService {
         return (List<SiteConfig>) siteConfigRepository.findAll();
     }
 
+    public SiteConfig findByPropertyName(String propertyName){
+        return (SiteConfig) siteConfigRepository.findByProperty(propertyName);
+    }
 
 
 }
