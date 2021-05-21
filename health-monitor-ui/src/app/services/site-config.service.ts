@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { SiteConfig } from '../models/siteconfig';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,10 @@ export class SiteConfigService {
 
   constructor(private http: HttpClient) { }
 
-  private serverAPI = "http://localhost:8080/"
+  private siteConfigAPI =  environment.apiUrl + "/siteconfig"
 
   public getConfigs(): Observable<SiteConfig[]> {
-    let endPoint = this.serverAPI + "siteconfig"
-    return this.http.get<Array<SiteConfig>>(endPoint);
+    return this.http.get<Array<SiteConfig>>(this.siteConfigAPI);
   }
 
 }
