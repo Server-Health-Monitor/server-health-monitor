@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageDbService } from '../services/local-storage-db.service';
 import { SiteConfigService } from '../services/site-config.service';
+import { ServersService } from './servers.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ export class BootstrapService {
 
   constructor(
     private lsDB: LocalStorageDbService,
-    private scs: SiteConfigService
+    private scs: SiteConfigService,
+    private ss: ServersService
   ) { }
 
   public start() {
@@ -32,10 +34,14 @@ export class BootstrapService {
 
   private dataRefresher() {
     console.log("Started scheduled data refresher");
-    setInterval(function () {
+    setInterval(() => {
       console.log("Refreshing data from server...");
-    }, 60 * 1000);
+      this.ss.getServers().subscribe(servers => {
+        this.lsDB.pushToLocalStorage("servers",JSON.stringify(servers));
+      })
+    }, 15 * 1000);
   }
+
 
 
 }
