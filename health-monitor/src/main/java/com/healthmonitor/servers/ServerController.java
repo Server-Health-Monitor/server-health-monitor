@@ -30,6 +30,10 @@ public class ServerController {
             this.servers = servers;
         }
 
+        public List<Server> getServers() {
+            return servers;
+        }
+
         public static Servers newServersList(List<Server> servers){
             return new Servers(servers);
         }
