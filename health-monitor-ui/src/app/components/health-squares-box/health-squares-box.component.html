@@ -1,4 +1,4 @@
 Hello!
 <ng-container *ngFor="let server of servers.servers;">
-    bowowwyipeeyoyipeeyay
+    <app-health-square [message]="server.displayName" [isHealthy]="server.status.statusName == 'UP'"></app-health-square>
 </ng-container>
