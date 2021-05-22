@@ -33,6 +33,7 @@
             <a class="nav-link" href="#">
                 <span data-feather="file-text"></span> {{favorite}}
             </a>
+            <app-favorite-heart [favoriteName]="favorite" [favorited]="true" class=" float-end nav-link" (removeFromFavoritesList)="favoriteRemoved($event)"></app-favorite-heart>
         </li>
     </ul>
 </nav>

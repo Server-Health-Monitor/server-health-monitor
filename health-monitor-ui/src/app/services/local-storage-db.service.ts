@@ -22,13 +22,27 @@ export class LocalStorageDbService {
   public getFavorites(): string[] {
     return JSON.parse(localStorage.getItem("favorites"));
   }
-
+  
   public addFavorite(favoriteName: string): void {
     let existingFaves = this.getFavorites();
     if (existingFaves == null) {
       let existingFaves = []
     }
     existingFaves.push(favoriteName);
+    this.pushToLocalStorage(this.favoritesKey, existingFaves)
+  }
+
+  public removeFavorite(favoriteName: string): void {
+    let existingFaves = this.getFavorites();
+    if (existingFaves == null) {
+      return
+    }
+    for(let i =0; i < existingFaves.length ;i++){
+      if(existingFaves[i] == favoriteName){
+        existingFaves.splice(i,1);
+        break;
+      }
+    }
     this.pushToLocalStorage(this.favoritesKey, existingFaves)
   }
 

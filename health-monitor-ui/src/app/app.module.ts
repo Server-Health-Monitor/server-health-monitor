@@ -14,7 +14,8 @@ import { BootstrapService } from './services/bootstrap.service';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HealthSquareComponent } from './components/health-square/health-square.component';
-import { HealthTileComponent } from './components/health-tile/health-tile.component'
+import { HealthTileComponent } from './components/health-tile/health-tile.component';
+import { FavoriteHeartComponent } from './components/favorite-heart/favorite-heart.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HealthTileComponent } from './components/health-tile/health-tile.compon
     HomeComponent,
     SidebarComponent,
     HealthSquareComponent,
-    HealthTileComponent
+    HealthTileComponent,
+    FavoriteHeartComponent
   ],
   imports: [
     BrowserModule,

@@ -10,22 +10,31 @@ export class BootstrapService {
   constructor(
     private lsDB: LocalStorageDbService,
     private scs: SiteConfigService
-    ) { }
+  ) { }
 
-  public start(){
+  public start() {
+    console.log("Boostrap service started!")
     this.loadConfig();
+    this.dataRefresher();
   }
 
-  public loadConfig(){
+  private loadConfig() {
     if (this.lsDB.getSiteName() == null) {
+      console.log("loading configs!")
       this.scs.getConfigs().subscribe(res => {
         console.log(res);
         res.forEach(config => {
-          this.lsDB.pushToLocalStorage(config.property,config.propertyValue);
+          this.lsDB.pushToLocalStorage(config.property, config.propertyValue);
         });
       });
     }
+  }
 
+  private dataRefresher() {
+    console.log("Started scheduled data refresher");
+    setInterval(function () {
+      console.log("Refreshing data from server...");
+    }, 60 * 1000);
   }
 
 
