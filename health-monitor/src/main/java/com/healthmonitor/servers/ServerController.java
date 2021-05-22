@@ -19,8 +19,20 @@ public class ServerController {
     ServerService serverService;
 
     @GetMapping
-    public List<Server> getAllConfigs() {
-        return serverService.listAll();
+    public Servers getAllConfigs() {
+        return Servers.newServersList(serverService.listAll());
+    }
+
+    private static class Servers {
+        public List<Server> servers;
+
+        private Servers(List<Server> servers) {
+            this.servers = servers;
+        }
+
+        public static Servers newServersList(List<Server> servers){
+            return new Servers(servers);
+        }
     }
 
 }
