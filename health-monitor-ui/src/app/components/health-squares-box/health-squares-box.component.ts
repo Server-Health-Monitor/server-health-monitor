@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Servers } from 'src/app/models/server';
+import { LocalStorageDbService } from '../../services/local-storage-db.service';
+
 
 @Component({
   selector: 'app-health-squares-box',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HealthSquaresBoxComponent implements OnInit {
 
-  constructor() { }
+  public servers: Servers = JSON.parse(this.lsDB.getAllServers());
+
+  constructor(
+    private lsDB: LocalStorageDbService,
+  ) { }
 
   ngOnInit(): void {
+    console.log(this.servers)
   }
 
 }
