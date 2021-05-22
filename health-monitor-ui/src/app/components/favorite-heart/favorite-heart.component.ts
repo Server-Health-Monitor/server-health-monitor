@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { LocalStorageDbService } from '../../services/local-storage-db.service'
 @Component({
   selector: 'app-favorite-heart',
   templateUrl: './favorite-heart.component.html',
@@ -7,14 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoriteHeartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private lsdb: LocalStorageDbService) { }
 
-  public favorited: boolean;
+  @Input() favorited: boolean;
+
+  @Input() favoriteName: string;
+
+  @Output() removeFromFavoritesList = new EventEmitter<boolean>();
 
   ngOnInit(): void {
+    this.lsdb.getFavorites();
   }
 
   public clickEvent(){
+    if (!this.favorited){
+      this.removeFavorite();
+    }
+    this.flipHeart();
+  }
+
+  public removeFavorite(){
+    this.lsdb.removeFavorite(this.favoriteName);
+    this.removeFromFavoritesList.emit(true);
+  }
+
+  public flipHeart(){
     this.favorited = !this.favorited;
   }
 

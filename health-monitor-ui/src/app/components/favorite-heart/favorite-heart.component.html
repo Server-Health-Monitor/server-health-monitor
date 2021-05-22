@@ -1,1 +1,1 @@
-<i class="fa-heart" [ngClass]="favorited ? 'fas' : 'far'" (click)="clickEvent()"></i>
+<i class="fa-heart" [ngClass]="favorited ? 'fas' : 'far'" (click)="clickEvent()" (mouseenter)="flipHeart()" (mouseleave)="flipHeart()"></i>

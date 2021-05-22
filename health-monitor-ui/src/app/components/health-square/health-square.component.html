@@ -1,5 +1,5 @@
-<div class="tooltip-wrap" [ngClass]="{'healthy': isHealthy, 'unhealthy': !isHealthy}">
-    <div class="tooltip-content">
+<div class="tooltip-wrap" [ngClass]="{'healthy': isHealthy, 'unhealthy': !isHealthy}" (click)="navigate()">
+    <div class=" tooltip-content ">
         <p>{{message}}</p>
     </div>
 </div>

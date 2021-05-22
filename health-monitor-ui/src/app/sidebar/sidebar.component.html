@@ -32,8 +32,8 @@
         <li *ngFor="let favorite of favorites" class="nav-item">
             <a class="nav-link" href="#">
                 <span data-feather="file-text"></span> {{favorite}}
-                <app-favorite-heart style="float: right;"></app-favorite-heart>
             </a>
+            <app-favorite-heart [favoriteName]="favorite" [favorited]="true" class=" float-end nav-link" (removeFromFavoritesList)="favoriteRemoved($event)"></app-favorite-heart>
         </li>
     </ul>
 </nav>
