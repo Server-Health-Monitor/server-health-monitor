@@ -8,7 +8,7 @@ import com.healthmonitor.proxy.Proxy;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "servers")
+@Table(name = "statuses")
 public class Status {
 
     @Id
@@ -17,7 +17,7 @@ public class Status {
     private Integer serverId;
 
     @Column(name = "status_name")
-    private Integer statusName;
+    private String statusName;
 
     public Integer getServerId() {
         return serverId;
@@ -27,11 +27,11 @@ public class Status {
         this.serverId = serverId;
     }
 
-    public Integer getStatusName() {
+    public String getStatusName() {
         return statusName;
     }
 
-    public void setStatusName(Integer statusName) {
+    public void setStatusName(String statusName) {
         this.statusName = statusName;
     }
 }
