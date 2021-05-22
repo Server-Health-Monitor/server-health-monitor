@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {LocalStorageDbService} from '../services/local-storage-db.service'
+import {LocalStorageDbService} from '../../services/local-storage-db.service'
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
