@@ -24,7 +24,7 @@ public class ServerController {
     }
 
     private static class Servers {
-        private List<Server> servers;
+        private final List<Server> servers;
 
         private Servers(List<Server> servers) {
             this.servers = servers;
