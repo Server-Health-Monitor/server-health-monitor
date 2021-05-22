@@ -32,6 +32,7 @@
         <li *ngFor="let favorite of favorites" class="nav-item">
             <a class="nav-link" href="#">
                 <span data-feather="file-text"></span> {{favorite}}
+                <app-favorite-heart style="float: right;"></app-favorite-heart>
             </a>
         </li>
     </ul>
