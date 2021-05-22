@@ -43,6 +43,4 @@ export class BootstrapService {
     }, 15 * 1000);
   }
 
-
-
 }

@@ -7,16 +7,18 @@ import { APP_INITIALIZER } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 
 import { LocalStorageDbService } from './services/local-storage-db.service';
 import { BootstrapService } from './services/bootstrap.service';
 
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from './navbar/sidebar/sidebar.component';
 import { HealthSquareComponent } from './components/health-square/health-square.component';
 import { HealthTileComponent } from './components/health-tile/health-tile.component';
 import { FavoriteHeartComponent } from './components/favorite-heart/favorite-heart.component';
-import { HealthSquaresBoxComponent } from './components/health-squares-box/health-squares-box.component'
+import { HealthSquaresBoxComponent } from './components/health-squares-box/health-squares-box.component';
+import { ApplicationPageComponent } from './pages/application-page/application-page.component';
+import { ApplicationsPageComponent } from './pages/applications-page/applications-page.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HealthSquaresBoxComponent } from './components/health-squares-box/healt
     HealthSquareComponent,
     HealthTileComponent,
     FavoriteHeartComponent,
-    HealthSquaresBoxComponent
+    HealthSquaresBoxComponent,
+    ApplicationPageComponent,
+    ApplicationsPageComponent
   ],
   imports: [
     BrowserModule,
