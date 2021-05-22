@@ -37,7 +37,8 @@ export class BootstrapService {
     setInterval(() => {
       console.log("Refreshing data from server...");
       this.ss.getServers().subscribe(servers => {
-        this.lsDB.pushToLocalStorage("servers",JSON.stringify(servers));
+        console.log(servers);
+        this.lsDB.pushToLocalStorage("servers",servers);
       })
     }, 15 * 1000);
   }

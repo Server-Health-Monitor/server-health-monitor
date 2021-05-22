@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Servers } from '../models/server';
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +49,9 @@ export class LocalStorageDbService {
 
   public pushToLocalStorage(key: string, value: Object) {
     localStorage.setItem(key, JSON.stringify(value));
+  }
+  
+  public getAllServers(): string{
+    return localStorage.getItem("servers");
   }
 }

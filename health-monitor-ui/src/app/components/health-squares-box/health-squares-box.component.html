@@ -1,1 +1,5 @@
-<p>health-squares-box works!</p>
+<div class="hs-box">
+    <ng-container *ngFor="let server of servers.servers;">
+        <app-health-square [message]="server.displayName" [isHealthy]="server.status.statusName == 'UP'"></app-health-square>
+    </ng-container>
+</div>

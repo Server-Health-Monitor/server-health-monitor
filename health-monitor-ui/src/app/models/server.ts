@@ -25,5 +25,5 @@ export interface Proxy {
 }
 export interface Status {
   serverId: number;
-  statusName?: null;
+  statusName?: string;
 }
