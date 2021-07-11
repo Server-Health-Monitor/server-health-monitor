@@ -4,8 +4,12 @@ services:
   admin:
     build: './health-monitor-admin-ui'
     ports:
-      - "8000:80"
+      - "8000:8002"
   db:
     build: './db'
+    volumes:
+      - pgdata:/var/lib/postgresql/data:rw
     ports:
       - "8001:5432"
+volumes: 
+  pgdata:

@@ -16,7 +16,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" [routerLink]="['/applications']">
                 <span data-feather="shopping-cart"></span> Applications
             </a>
         </li>
@@ -33,6 +33,7 @@
             <a class="nav-link" href="#">
                 <span data-feather="file-text"></span> {{favorite}}
             </a>
+            <app-favorite-heart [favoriteName]="favorite" [favorited]="true" class=" float-end nav-link" (removeFromFavoritesList)="favoriteRemoved($event)"></app-favorite-heart>
         </li>
     </ul>
 </nav>

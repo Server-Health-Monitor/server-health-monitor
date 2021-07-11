@@ -53,3 +53,7 @@
 .body {
     color: black;
 }
+
+.nav-link {
+    display: inline-block;
+}
