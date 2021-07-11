@@ -1,7 +1,5 @@
 package com.healthmonitor;
 
-import com.healthmonitor.applications.Application;
-import com.healthmonitor.applications.ApplicationService;
 import com.healthmonitor.servers.Server;
 import com.healthmonitor.servers.ServerService;
 import org.springframework.beans.factory.annotation.Autowired;
