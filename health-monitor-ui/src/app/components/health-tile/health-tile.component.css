@@ -5,3 +5,11 @@
     border-radius: 5px;
     padding: 10px 10px 10px 10px
 }
+
+.healthy{
+    background-color: #63e063;
+}
+
+.unhealthy {
+    background-color: #e06363;
+}
