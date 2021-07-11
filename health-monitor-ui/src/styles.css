@@ -6,6 +6,11 @@ body {
     color: black;
 }
 
+h1{
+    text-align: center;
+    margin-top: 1.4rem;
+}
+
 a {
     color: inherit;
 }
