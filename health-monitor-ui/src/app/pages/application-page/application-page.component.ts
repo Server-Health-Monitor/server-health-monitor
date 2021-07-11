@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationPageComponent implements OnInit {
 
+  public appName = "Fakebook"
+  public favorited = true
   constructor() { }
 
   ngOnInit(): void {
