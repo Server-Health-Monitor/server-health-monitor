@@ -27,7 +27,7 @@ export class LocalStorageDbService {
   public addFavorite(favoriteName: string): void {
     let existingFaves = this.getFavorites();
     if (existingFaves == null) {
-      let existingFaves = []
+      existingFaves = []
     }
     existingFaves.push(favoriteName);
     this.pushToLocalStorage(this.favoritesKey, existingFaves)

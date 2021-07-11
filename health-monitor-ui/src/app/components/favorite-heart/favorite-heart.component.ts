@@ -19,19 +19,25 @@ export class FavoriteHeartComponent implements OnInit {
     this.lsdb.getFavorites();
   }
 
-  public clickEvent(){
+  public clickEvent(): void{
     if (!this.favorited){
       this.removeFavorite();
+    } else {
+      this.addFavorite();
     }
     this.flipHeart();
   }
 
-  public removeFavorite(){
+  public removeFavorite(): void{
     this.lsdb.removeFavorite(this.favoriteName);
     this.removeFromFavoritesList.emit(true);
   }
 
-  public flipHeart(){
+  public addFavorite(): void{
+    this.lsdb.addFavorite(this.favoriteName);
+  }
+
+  public flipHeart(): void{
     this.favorited = !this.favorited;
   }
 
