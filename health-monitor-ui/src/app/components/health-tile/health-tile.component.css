@@ -1,7 +1,8 @@
 .health-tile {
     width: 24%;
     height: 17%;
-    background-color: #63e063;
+    background-color: #21d421;
+    color: white;
     border-radius: 5px;
     padding: 10px 10px 10px 10px
 }
