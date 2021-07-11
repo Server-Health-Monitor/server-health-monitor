@@ -18,6 +18,7 @@
 }
 
 .tooltip-wrap .tooltip-content {
+    cursor: pointer;
     display: none;
     position: absolute;
     bottom: 5%;
